@@ -1,29 +1,57 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Playables;
 
 public class CraftController : MonoBehaviour
 {
-    [SerializeField] private PlayableDirector _showCraftDetailsScreenDirector;
-    [SerializeField] private PlayableDirector _showCraftProgressDirector;
-    [SerializeField] private PlayableDirector _showCraftDNAScreenDirector;
+    [SerializeField] private CraftUIController _uiController;
+    [SerializeField] private List<CraftSlot> _slots;
+    
+    public static CraftController Instance;
 
-    private void OnEnable()
+    private void Awake()
     {
-        return;
-        _showCraftDetailsScreenDirector.Play();
-        _showCraftDetailsScreenDirector.stopped += OnDetailsDirectorFinished;
+        Instance = this;
     }
 
-    private void OnDetailsDirectorFinished(PlayableDirector director)
+    public void OnCraftMaterialAdded(int slotIndex)
     {
-        director.stopped -= OnDetailsDirectorFinished;
-        _showCraftProgressDirector.Play();
-        _showCraftProgressDirector.stopped += OnProgressDirectorFinished;
+        _slots[slotIndex].SetSlotActive(true);
+        
+        if(CanCraft())
+            _uiController.EnableCraftButton();
     }
 
-    private void OnProgressDirectorFinished(PlayableDirector director)
+    public void OnCraftMaterialRemoved(int slotIndex)
     {
-        director.stopped -= OnProgressDirectorFinished;
-        _showCraftDNAScreenDirector.Play();
+        _slots[slotIndex].SetSlotActive(false);
+        _uiController.DisableCraftButton();
+    }
+
+    public bool CanCraft()
+    {
+        for (var index = 0; index < _slots.Count; index++)
+        {
+            CraftSlot slot = _slots[index];
+            if (slot.IsActive) 
+                continue;
+
+            return false;
+        }
+
+        return true;
+    }
+
+    public void OnCraftFinished()
+    {
+        ResetSlots();
+    }
+    
+    public void ResetSlots()
+    {
+        for (var index = 0; index < _slots.Count; index++)
+        {
+            CraftSlot slot = _slots[index];
+            slot.SetSlotActive(false);
+        }
     }
 }
