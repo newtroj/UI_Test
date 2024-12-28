@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -26,6 +27,8 @@ public class DraggableSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         _draggingImage.sprite = _slotImageToDrag.sprite;
         _draggingImage.color = Color.white;
         _draggingRectTransform.position = transform.position;
+        
+        _slotImageToDrag.transform.parent.DOScale(Vector3.one * 0.95f, 0.5f).SetEase(Ease.InOutBounce);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -35,6 +38,11 @@ public class DraggableSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        _slotImageToDrag.transform.parent.localScale = Vector3.one;
+        
+        if(_slotImageToDrag.color.a < 1)
+            return;
+        
         _draggingImage.color = Color.clear;
         
         if (!eventData.pointerEnter)

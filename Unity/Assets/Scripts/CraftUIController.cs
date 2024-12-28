@@ -8,6 +8,7 @@ public class CraftUIController : MonoBehaviour
 {
     [SerializeField] private PlayableDirector _enableCraftButtonDirector;
     [SerializeField] private PlayableDirector _showCraftDetailsScreenDirector;
+    [SerializeField] private PlayableDirector _loopCraftDetailsScreenDirector;
     [SerializeField] private PlayableDirector _showCraftProgressDirector;
     [SerializeField] private PlayableDirector _showCraftDNAScreenDirector;
     [SerializeField] private ParticleSystem _buttonParticles;
@@ -84,6 +85,13 @@ public class CraftUIController : MonoBehaviour
     private void OpenDetailsScreen()
     {
         _showCraftDetailsScreenDirector.Play();
+        _showCraftDetailsScreenDirector.stopped += OnShowDetailsScreenDirectorFinished;
+    }
+
+    private void OnShowDetailsScreenDirectorFinished(PlayableDirector obj)
+    {
+        obj.stopped -= OnShowDetailsScreenDirectorFinished;
+        _loopCraftDetailsScreenDirector.Play();
     }
 
     private void StartCraftProgress()
@@ -105,6 +113,7 @@ public class CraftUIController : MonoBehaviour
         
         StopCraftButtonAnimation();
         
+        _loopCraftDetailsScreenDirector.Stop();
         ResetTimeline(_showCraftProgressDirector);
         ResetTimeline(_showCraftDetailsScreenDirector);
         ResetTimeline(_enableCraftButtonDirector);

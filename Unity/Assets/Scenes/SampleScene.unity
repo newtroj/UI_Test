@@ -364,7 +364,7 @@ RectTransform:
   m_GameObject: {fileID: 329529006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0834647, y: 1.0834647, z: 1.0834647}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 367614536}
@@ -580,7 +580,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.07, y: 0.775}
   m_AnchorMax: {x: 0.34, y: 0.9}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -18.548904}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &351829617
@@ -694,6 +694,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 363989600}
   m_CullTransparentMesh: 1
+--- !u!1 &366476091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 366476092}
+  - component: {fileID: 366476093}
+  m_Layer: 0
+  m_Name: Craft_Details_Screen_Loop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &366476092
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366476091}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1569385321}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &366476093
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366476091}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 9546f065a86220542a59d0e36d2c2a7d, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 1
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -570392007041553109, guid: 9546f065a86220542a59d0e36d2c2a7d, type: 2}
+    value: {fileID: 1251046603}
+  - key: {fileID: 1238211590760728345, guid: 9546f065a86220542a59d0e36d2c2a7d, type: 2}
+    value: {fileID: 12362525}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &367614535
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,7 +775,7 @@ RectTransform:
   m_GameObject: {fileID: 367614535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6935483, y: 0.6935483, z: 0.6935483}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1115720575}
@@ -1365,7 +1418,7 @@ RectTransform:
   m_GameObject: {fileID: 505102892}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0310463, y: 1.0310463, z: 1.0310463}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 367614536}
@@ -1509,7 +1562,7 @@ GameObject:
   - component: {fileID: 553094649}
   - component: {fileID: 553094650}
   m_Layer: 0
-  m_Name: Show_Craft_Progress
+  m_Name: Craft_Progress_Show
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1528,7 +1581,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1569385321}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!320 &553094650
 PlayableDirector:
@@ -2322,6 +2375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enableCraftButtonDirector: {fileID: 2051313581}
   _showCraftDetailsScreenDirector: {fileID: 1722421385}
+  _loopCraftDetailsScreenDirector: {fileID: 366476093}
   _showCraftProgressDirector: {fileID: 553094650}
   _showCraftDNAScreenDirector: {fileID: 1309467740}
   _buttonParticles: {fileID: 1275321672}
@@ -7759,7 +7813,7 @@ GameObject:
   - component: {fileID: 1309467739}
   - component: {fileID: 1309467740}
   m_Layer: 0
-  m_Name: Show_Craft_DNA_Screen
+  m_Name: Craft_DNA_Screen_Show
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7778,7 +7832,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1569385321}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!320 &1309467740
 PlayableDirector:
@@ -8035,7 +8089,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449898570}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.08987214, w: 0.9959533}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8197,6 +8251,7 @@ Transform:
   m_Children:
   - {fileID: 2051313580}
   - {fileID: 1722421384}
+  - {fileID: 366476092}
   - {fileID: 553094649}
   - {fileID: 1309467739}
   - {fileID: 1674005373}
@@ -8408,7 +8463,7 @@ GameObject:
   - component: {fileID: 1674005373}
   - component: {fileID: 1674005372}
   m_Layer: 0
-  m_Name: Hide_Craft_DNA_Screen
+  m_Name: Craft_DNA_Screen_Hide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8429,10 +8484,6 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: -1721565188841129728, guid: a64f598fc24014d4db3c211a4d29f2c1, type: 2}
-    value: {fileID: 1310825801}
-  - key: {fileID: -3229097130925822650, guid: a64f598fc24014d4db3c211a4d29f2c1, type: 2}
-    value: {fileID: 367614539}
   - key: {fileID: -7522318921128879539, guid: 9537b567feac9da4e9a59ae507a3aa57, type: 2}
     value: {fileID: 1310825801}
   - key: {fileID: 2176655307461207202, guid: 9537b567feac9da4e9a59ae507a3aa57, type: 2}
@@ -8452,7 +8503,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1569385321}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1716047494
 GameObject:
@@ -8541,7 +8592,7 @@ GameObject:
   - component: {fileID: 1722421384}
   - component: {fileID: 1722421385}
   m_Layer: 0
-  m_Name: Show_Craft_Details_Screen
+  m_Name: Craft_Details_Screen_Show
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8577,12 +8628,14 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: -8527124823575794256, guid: af8f49cd5d9bf9d4ca31f7206d4c19c9, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 148024863}
   - key: {fileID: -570392007041553109, guid: af8f49cd5d9bf9d4ca31f7206d4c19c9, type: 2}
     value: {fileID: 1251046603}
   - key: {fileID: 1238211590760728345, guid: af8f49cd5d9bf9d4ca31f7206d4c19c9, type: 2}
     value: {fileID: 12362525}
+  - key: {fileID: -8527124823575794256, guid: af8f49cd5d9bf9d4ca31f7206d4c19c9, type: 2}
+    value: {fileID: 148024863}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1743192945
@@ -8964,7 +9017,7 @@ GameObject:
   - component: {fileID: 2051313580}
   - component: {fileID: 2051313581}
   m_Layer: 0
-  m_Name: Enable_Craft_Button
+  m_Name: Craft_Button_Enable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9000,12 +9053,8 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: -8527124823575794256, guid: af8f49cd5d9bf9d4ca31f7206d4c19c9, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 148024863}
-  - key: {fileID: -570392007041553109, guid: af8f49cd5d9bf9d4ca31f7206d4c19c9, type: 2}
-    value: {fileID: 1251046603}
-  - key: {fileID: 1238211590760728345, guid: af8f49cd5d9bf9d4ca31f7206d4c19c9, type: 2}
-    value: {fileID: 12362525}
   - key: {fileID: -4533305942536007149, guid: d105cd1a2eeeb754da8f143d490d1724, type: 2}
     value: {fileID: 8507678466046801829}
   - key: {fileID: 192630742508876060, guid: d105cd1a2eeeb754da8f143d490d1724, type: 2}
