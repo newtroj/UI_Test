@@ -88,12 +88,12 @@ GameObject:
   - component: {fileID: 2442326515388449817}
   - component: {fileID: 8279782556003151003}
   m_Layer: 5
-  m_Name: X_Image
+  m_Name: X_Image__(Disable_It)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5148820789068880448
 RectTransform:
   m_ObjectHideFlags: 0
