@@ -419,6 +419,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1708664316}
+        m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1674005372}
         m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
         m_MethodName: Play
@@ -775,7 +787,7 @@ RectTransform:
   m_GameObject: {fileID: 367614535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6935483, y: 0.6935483, z: 0.6935483}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1115720575}
@@ -2378,6 +2390,7 @@ MonoBehaviour:
   _loopCraftDetailsScreenDirector: {fileID: 366476093}
   _showCraftProgressDirector: {fileID: 553094650}
   _showCraftDNAScreenDirector: {fileID: 1309467740}
+  _loopCraftDNAScreenDirector: {fileID: 1708664316}
   _buttonParticles: {fileID: 1275321672}
   _scaleUp: 1.2
   _fastAnimationDuration: 0.25
@@ -8099,7 +8112,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: -0.125, y: -0.05}
   m_AnchorMax: {x: 1.025, y: 1.05}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 4.097992, y: -0.76498413}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1449898572
@@ -8549,10 +8562,12 @@ PlayableDirector:
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 104742e0f2233394b8b40d2c1694c76a, type: 2}
   m_InitialState: 0
-  m_WrapMode: 2
+  m_WrapMode: 1
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings: []
+  m_SceneBindings:
+  - key: {fileID: -3443780887386248207, guid: 104742e0f2233394b8b40d2c1694c76a, type: 2}
+    value: {fileID: 367614539}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1716047494

@@ -11,6 +11,7 @@ public class CraftUIController : MonoBehaviour
     [SerializeField] private PlayableDirector _loopCraftDetailsScreenDirector;
     [SerializeField] private PlayableDirector _showCraftProgressDirector;
     [SerializeField] private PlayableDirector _showCraftDNAScreenDirector;
+    [SerializeField] private PlayableDirector _loopCraftDNAScreenDirector;
     [SerializeField] private ParticleSystem _buttonParticles;
 
     [SerializeField] private float _scaleUp = 1.2f;
@@ -110,6 +111,8 @@ public class CraftUIController : MonoBehaviour
     private void Cleanup(PlayableDirector obj)
     {
         obj.stopped -= Cleanup;
+        
+        _loopCraftDNAScreenDirector.Play();
         
         StopCraftButtonAnimation();
         
