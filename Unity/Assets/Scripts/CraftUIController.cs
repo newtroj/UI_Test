@@ -10,6 +10,7 @@ public class CraftUIController : MonoBehaviour
     [SerializeField] private PlayableDirector _showCraftDetailsScreenDirector;
     [SerializeField] private PlayableDirector _showCraftProgressDirector;
     [SerializeField] private PlayableDirector _showCraftDNAScreenDirector;
+    [SerializeField] private ParticleSystem _buttonParticles;
 
     [SerializeField] private float _scaleUp = 1.2f;
     [SerializeField] private float _fastAnimationDuration = 0.5f;
@@ -35,6 +36,7 @@ public class CraftUIController : MonoBehaviour
         director.stopped -= OnCraftButtonEnabled;
         PlayCraftButtonAnimation(_slowAnimationDuration);
         OpenDetailsScreen();
+        _buttonParticles.Play();
     }
 
     private void PlayCraftButtonAnimation(float duration)
@@ -49,6 +51,7 @@ public class CraftUIController : MonoBehaviour
     {
         currentTween?.Kill();
         _craftButtonTransform.localScale = Vector3.one;
+        _buttonParticles.Stop();
     }
 
     public void OnCraftButtonPressed()

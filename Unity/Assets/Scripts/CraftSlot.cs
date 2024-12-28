@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,15 @@ public class CraftSlot : MonoBehaviour
     public void SetSlotActive(bool active)
     {
         IsActive = active;
-        _image.color = active ? Color.white : Color.clear;
+        if (active)
+        {
+            _image.color = Color.white;
+            transform.DOScale(Vector3.one * 0.95f, 0.5f).SetEase(Ease.OutBounce);
+        }
+        else
+        {
+            _image.color = Color.clear;
+            transform.localScale = Vector3.one;
+        }
     }
 }
