@@ -60,6 +60,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 1490b82260434bb48b4ebac93279943c, type: 3}
   - {fileID: 21300000, guid: 31155b729727d6b41885edbfe6664a94, type: 3}
   - {fileID: 21300000, guid: c6c8a6235a60d464b9eebe77e1cafd5a, type: 3}
+  - {fileID: 21300000, guid: 0e26fe8326d7e4140b217d54308d827e, type: 3}
   - {fileID: 21300000, guid: eb47d754161dc2945b973c3d334cfbe5, type: 3}
   - {fileID: 21300000, guid: 981b8295eb80bd541bd8dc0005ed673f, type: 3}
   - {fileID: 21300000, guid: 32681bc66695a474ba2c85f2b84157e9, type: 3}
@@ -71,6 +72,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 8f4da9cae8644dc44b0218d4c433602c, type: 3}
   - {fileID: 21300000, guid: 5219669b8f212d94a99a01ccf876baa4, type: 3}
   - {fileID: 21300000, guid: 3cd3c27ca8fe8384f98816dee99309ba, type: 3}
+  - {fileID: 21300000, guid: c57af59ca26933a43971f7e65595ad35, type: 3}
   - {fileID: 21300000, guid: fa20d2ac7931e214ab458005ea0380ab, type: 3}
   - {fileID: 21300000, guid: dcb9c23ee9263c147b6a3847459fe33b, type: 3}
   - {fileID: 21300000, guid: aab9a1ae3fa998b4ca482c06122e11f4, type: 3}
@@ -89,6 +91,7 @@ SpriteAtlas:
   - Button-Overlay
   - star-1
   - Flying
+  - DNA_Background
   - lock
   - Craft-Result
   - 50Flying
@@ -100,6 +103,7 @@ SpriteAtlas:
   - Flying-Background
   - Button-Craft-On
   - Free-Space
+  - 50Fang
   - Slot-Overlay
   - 10x
   - Free-Space-Main
